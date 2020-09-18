@@ -281,12 +281,12 @@ img {
 
 @font-face {
   font-family: "NimbusSemi";
-  src: url(/styles/fonts/NimbusSansRound-SemiBold/font.woff);
+  src: url(./styles/fonts/NimbusSansRound-SemiBold/font.woff);
 }
 
 @font-face {
   font-family: "NimbusBold";
-  src: url(/styles/fonts/NimbusSansRound-Black/font.woff);
+  src: url(./styles/fonts/NimbusSansRound-Black/font.woff);
 }
 
 body {
