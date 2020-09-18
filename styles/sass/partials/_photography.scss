@@ -1,0 +1,23 @@
+.photos {
+	.gallery {
+	}
+	ul {
+		list-style: none outside none;
+		padding-left: 0;
+		margin-bottom: 0;
+		display: flex;
+	}
+	li {
+		width: 450px;
+
+		display: block;
+		float: left;
+		margin-right: 6px;
+		cursor: pointer;
+	}
+	img {
+		display: block;
+		height: auto;
+		max-width: 100%;
+	}
+}

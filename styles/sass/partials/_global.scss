@@ -1,0 +1,22 @@
+@font-face {
+	font-family: "NimbusSemi";
+	src: url(/styles/fonts/NimbusSansRound-SemiBold/font.woff);
+}
+
+@font-face {
+	font-family: "NimbusBold";
+	src: url(/styles/fonts/NimbusSansRound-Black/font.woff);
+}
+
+body {
+	font-family: "NimbusSemi";
+}
+
+// h1 {
+// 	font-family: "NimbusBold";
+// }
+
+a {
+	text-decoration: none;
+	color: black;
+}
