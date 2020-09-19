@@ -291,10 +291,17 @@ img {
 
 body {
   font-family: "NimbusSemi";
+  font-size: 1.1rem;
 }
 
 h1 {
   font-family: "NimbusBold";
+  font-size: 3rem;
+}
+
+ul a,
+p {
+  text-transform: uppercase;
 }
 
 a {
@@ -321,6 +328,11 @@ nav ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+i {
+  font-size: 20px;
+  padding: 10px 5px;
 }
 
 ul {

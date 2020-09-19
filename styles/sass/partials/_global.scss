@@ -10,12 +10,18 @@
 
 body {
 	font-family: "NimbusSemi";
+	font-size: 1.1rem;
 }
 
 h1 {
 	font-family: "NimbusBold";
+	font-size: 3rem;
 }
 
+ul a,
+p {
+	text-transform: uppercase;
+}
 a {
 	text-decoration: none;
 	color: black;
