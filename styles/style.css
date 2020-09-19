@@ -309,6 +309,10 @@ a {
   color: black;
 }
 
+img {
+  padding: 0px 10px;
+}
+
 .wrapper {
   max-width: 1200px;
   width: 80%;
