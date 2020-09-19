@@ -133,7 +133,7 @@
 
         refresh.calSW = function () {
             if (settings.autoWidth === false) {
-                slideWidth = (elSize - ((settings.item * (settings.slideMargin)) - settings.slideMargin)) / settings.item;
+                slideWidth = ((elSize - ((settings.item * (settings.slideMargin)) - settings.slideMargin)) / settings.item) / 2;
             }
         };
 
@@ -321,7 +321,7 @@
                         this.move($el, slideValue);
                     }
                     if (settings.vertical === false) {
-                        this.setHeight($el, false);
+                        // this.setHeight($el, false);
                     }
 
                 } else {
@@ -436,7 +436,8 @@
                     obj = ob.children().first();
                 }
                 var setCss = function () {
-                    var tH = obj.outerHeight(),
+                    //REMOVED FOR HEIGHT
+                    // var tH = obj.outerHeight(),
                         tP = 0,
                         tHT = tH;
                     if (fade) {
