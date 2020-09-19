@@ -281,16 +281,20 @@ img {
 
 @font-face {
   font-family: "NimbusSemi";
-  src: url(./styles/fonts/NimbusSansRound-SemiBold/font.woff);
+  src: url("/styles/fonts/NimbusSansRound-SemiBold/font.woff") format("woff");
 }
 
 @font-face {
   font-family: "NimbusBold";
-  src: url(./styles/fonts/NimbusSansRound-Black/font.woff);
+  src: url("/styles/fonts/NimbusSansRound-Black/font.woff") format("woff");
 }
 
 body {
   font-family: "NimbusSemi";
+}
+
+h1 {
+  font-family: "NimbusBold";
 }
 
 a {
@@ -313,24 +317,24 @@ nav ul {
           flex-direction: column;
 }
 
-.photos ul {
+.demo {
+  width: 450px;
+}
+
+ul {
   list-style: none outside none;
   padding-left: 0;
   margin-bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
-.photos li {
-  width: 450px;
+li {
   display: block;
   float: left;
   margin-right: 6px;
   cursor: pointer;
 }
 
-.photos img {
+img {
   display: block;
   height: auto;
   max-width: 100%;
