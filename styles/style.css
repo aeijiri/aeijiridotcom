@@ -317,10 +317,6 @@ nav ul {
           flex-direction: column;
 }
 
-.demo {
-  width: 450px;
-}
-
 ul {
   list-style: none outside none;
   padding-left: 0;
