@@ -5,25 +5,36 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>aeijiri.com</title>
 		<link rel="stylesheet" href="./styles/style.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 
 	<body>
 		<aside>
-			<nav>
-				<h1>adrian muir</h1>
+			<nav class="nav">
+				<h1><a href="./index.html">adrian muir</a></h1>
 				<ul>
+					<a href="./index.html">Home</a>
 					<a href="#">About</a>
 					<a href="#">Cinematography Reel</a>
-					<a href="#">Analog Photo</a>
-					<a href="#">Digital Photo</a>
+					<!-- <a href="#">Analog Photo</a> -->
+					<a href="./Photography.html">Photography</a>
 					<a href="#">Mixes</a>
 					<a href="#">Contact</a>
 				</ul>
 			</nav>
 		</aside>
 
-		<main>
-			<h1>content</h1>
+		<main class="reel">
+			<div class="wrapper">
+				<div class="videoWrapper">
+					<iframe
+						src="https://player.vimeo.com/video/350141735"
+						frameborder="0"
+						allow="autoplay; fullscreen"
+						allowfullscreen
+					></iframe>
+				</div>
+			</div>
 		</main>
 	</body>
 </html>

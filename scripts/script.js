@@ -6,4 +6,5 @@ $(document).ready(function () {
 		slideMargin: 0,
 		thumbItem: 9
 	});
+
 });
