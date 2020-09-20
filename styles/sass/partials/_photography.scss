@@ -1,23 +1,25 @@
+// lightslider gallery
 .demo {
 	// width: 55%;
 }
 ul {
 	list-style: none outside none;
-	padding-left: 0;
-	margin-bottom: 0;
+	// padding-left: 0;
+	// margin-bottom: 0;
 }
 li {
-	display: block;
-	float: left;
-	margin-right: 6px;
-	cursor: pointer;
+	// display: block;
+	// float: left;
+	// margin-right: 6px;
+	// cursor: pointer;
 }
 img {
-	display: block;
-	height: auto;
-	max-width: 100%;
+	// display: block;
+	// height: auto;
+	// max-width: 100%;
 }
 
+// hover overlay
 //from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity
 .container {
 	position: relative;
@@ -56,4 +58,60 @@ img {
 	color: black;
 	font-size: 16px;
 	padding: 16px 32px;
+}
+
+//horizontal scroll
+
+$finalHeight: 700px;
+$finalWidth: 3 * $finalHeight;
+$scrollBarHeight: 1px;
+
+::-webkit-scrollbar {
+	width: $scrollBarHeight;
+	height: $scrollBarHeight;
+}
+
+::-webkit-scrollbar-button {
+	width: $scrollBarHeight;
+	height: $scrollBarHeight;
+}
+
+// body {
+//   background: #111;
+// }
+
+div {
+	box-sizing: border-box;
+}
+
+.horizontal-scroll-wrapper {
+	// position: absolute;
+	display: block;
+	// top: 0;
+	// left: 0;
+	width: calc(#{$finalHeight} + #{$scrollBarHeight});
+	max-height: $finalWidth;
+	margin: 0;
+	padding-top: $scrollBarHeight;
+	// background: #abc;
+	overflow-y: auto;
+	overflow-x: hidden;
+	transform: rotate(-90deg) translateY(-$finalHeight);
+	transform-origin: right top;
+	& > div {
+		display: block;
+		padding: 5px;
+		// background: #cab;
+		transform: rotate(90deg);
+		transform-origin: right top;
+	}
+}
+
+.squares {
+	padding: $finalHeight 0 0 0;
+	& > div {
+		width: $finalHeight;
+		height: $finalHeight;
+		margin: 10px 0;
+	}
 }

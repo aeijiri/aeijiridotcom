@@ -341,21 +341,6 @@ i {
 
 ul {
   list-style: none outside none;
-  padding-left: 0;
-  margin-bottom: 0;
-}
-
-li {
-  display: block;
-  float: left;
-  margin-right: 6px;
-  cursor: pointer;
-}
-
-img {
-  display: block;
-  height: auto;
-  max-width: 100%;
 }
 
 .container {
@@ -399,6 +384,54 @@ img {
   color: black;
   font-size: 16px;
   padding: 16px 32px;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-button {
+  width: 1px;
+  height: 1px;
+}
+
+div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.horizontal-scroll-wrapper {
+  display: block;
+  width: calc(700px + 1px);
+  max-height: 2100px;
+  margin: 0;
+  padding-top: 1px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-transform: rotate(-90deg) translateY(-700px);
+          transform: rotate(-90deg) translateY(-700px);
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+}
+
+.horizontal-scroll-wrapper > div {
+  display: block;
+  padding: 5px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+}
+
+.squares {
+  padding: 700px 0 0 0;
+}
+
+.squares > div {
+  width: 700px;
+  height: 700px;
+  margin: 10px 0;
 }
 
 .videoWrapper {
