@@ -11,6 +11,7 @@
 body {
 	font-family: "NimbusSemi";
 	font-size: 1.1rem;
+	display: flex;
 }
 
 h1 {
@@ -27,6 +28,10 @@ a {
 	color: black;
 }
 
+p {
+	margin: 10px 0;
+}
+
 img {
 	padding: 0px 10px;
 }
@@ -35,4 +40,8 @@ img {
 	max-width: 1200px;
 	width: 80%;
 	margin: 0 auto;
+}
+
+.clearfix {
+	overflow: auto;
 }
