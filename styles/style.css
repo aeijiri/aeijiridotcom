@@ -17,7 +17,8 @@ section {
   display: block;
 }
 
-h1 {
+h1,
+.links {
   margin: 0.67em 0;
 }
 
@@ -299,10 +300,12 @@ body {
 h1 {
   font-family: "NimbusBold";
   font-size: 3rem;
+  text-align: center;
 }
 
 ul a,
-p {
+p,
+footer {
   text-transform: uppercase;
 }
 
@@ -322,15 +325,30 @@ img {
 .wrapper {
   max-width: 1200px;
   width: 80%;
-  margin: 0 auto;
+  margin: 100px auto 0;
 }
 
-.clearfix {
-  overflow: auto;
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.active {
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+}
+
+aside {
+  background-color: #e8e8e8;
+  height: 100vh;
 }
 
 nav {
-  margin: 100px 30px;
+  margin: 0 20px;
 }
 
 nav ul {
@@ -343,9 +361,59 @@ nav ul {
           flex-direction: column;
 }
 
+nav ul a:hover {
+  color: #e8e8e8;
+}
+
+nav .icons {
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+}
+
 i {
   font-size: 20px;
   padding: 10px 5px;
+}
+
+main,
+aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+ul {
+  list-style: none outside none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+li {
+  display: block;
+  float: left;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
 }
 
 .container {
@@ -391,51 +459,24 @@ i {
   padding: 16px 32px;
 }
 
-::-webkit-scrollbar {
-  width: 1px;
-  height: 1px;
-}
-
-::-webkit-scrollbar-button {
-  width: 1px;
-  height: 1px;
-}
-
-.horizontal-scroll-wrapper {
-  display: block;
-  width: calc(700px + 1px);
-  max-height: 2100px;
-  margin: 0;
-  padding-top: 1px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-transform: rotate(-90deg) translateY(-700px);
-          transform: rotate(-90deg) translateY(-700px);
-  -webkit-transform-origin: right top;
-          transform-origin: right top;
-}
-
-.horizontal-scroll-wrapper > div {
-  display: block;
-  padding: 5px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  -webkit-transform-origin: right top;
-          transform-origin: right top;
-}
-
-.squares {
-  padding: 700px 0 0 0;
-}
-
-.squares > div {
-  width: 700px;
-  height: 700px;
-  margin: 10px 0;
-}
-
 iframe {
   position: absolute;
   width: 70%;
   height: 100%;
+}
+
+@media (max-width: 900px) {
+  .header-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .menu {
+    position: static;
+    text-align: right;
+  }
 }

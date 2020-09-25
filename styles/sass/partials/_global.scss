@@ -2,6 +2,7 @@
 	font-family: "NimbusSemi";
 	src: url("../styles/fonts/NimbusSansRound-SemiBold/font.woff") format("woff");
 }
+$navtext: #e8e8e8;
 
 @font-face {
 	font-family: "NimbusBold";
@@ -12,20 +13,27 @@ body {
 	font-family: "NimbusSemi";
 	font-size: 1.1rem;
 	display: flex;
+	// flex-direction: column;
 }
 
 h1 {
 	font-family: "NimbusBold";
 	font-size: 3rem;
+	text-align: center;
 }
 
 ul a,
-p {
+p,
+footer {
 	text-transform: uppercase;
 }
 a {
 	text-decoration: none;
 	color: black;
+
+	// &:hover {
+	// 	color: $navtext;
+	// }
 }
 
 p {
@@ -39,9 +47,17 @@ img {
 .wrapper {
 	max-width: 1200px;
 	width: 80%;
-	margin: 0 auto;
+	margin: 100px auto 0;
 }
 
-.clearfix {
-	overflow: auto;
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+	// width: 150px;
+}
+
+.active {
+	font-weight: bold;
+	font-size: 1.2rem;
+	letter-spacing: 5px;
 }

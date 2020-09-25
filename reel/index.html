@@ -20,32 +20,55 @@
 
 	<body>
 		<aside>
-			<nav class="nav">
-				<div class="icons">
-					<a href="https://www.instagram.com/aeijri/"
-						><i class="fab fa-instagram"></i
-					></a>
-					<a href="https://vimeo.com/adrianjamesmuir"
-						><i class="fab fa-vimeo-v"></i
-					></a>
-					<a href="mailto: info@aeijri.com"><i class="far fa-envelope"></i></a>
-				</div>
+			<!-- <nav role="navigation">
+				<div id="menuToggle">
+					<input type="checkbox" /> -->
+			<!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+
+			<!--
+    Some spans to act as a hamburger.
+    
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+			<!-- <span></span>
+		<span></span>
+		<span></span> -->
+
+			<!--
+    Too bad the menu has to be inside of the button
+		but hey, it's pure CSS magic.
+		-->
+			<nav>
+				<!-- <ul id="menu"> -->
 				<h1><a href="../index.html">adrian muir</a></h1>
 				<ul>
-					<a href="../index.html">Home</a>
-					<a href="#">About</a>
-					<a href="#">Cinematography Reel</a>
-					<!-- <a href="#">Analog Photo</a> -->
+					<a href="/">About</a>
+					<a href="/" class="active">Cinematography</a>
 					<a href="../photography/">Photography</a>
-					<a href="#">Mixes</a>
-					<a href="#">Contact</a>
+					<a href="/">Mixes</a>
+					<div class="icons">
+						<a href="https://www.instagram.com/aeijri/"
+							><i class="fab fa-instagram"></i
+						></a>
+						<a href="https://vimeo.com/adrianjamesmuir"
+							><i class="fab fa-vimeo-v"></i
+						></a>
+						<a href="mailto: info@aeijri.com"
+							><i class="far fa-envelope"></i
+						></a>
+					</div>
+					<footer>Aeijri &#169; 2020</footer>
 				</ul>
 			</nav>
 		</aside>
 
 		<main>
-			<!-- <div class="wrapper"> -->
-			<div class="videoWrapper">
+			<div class="wrapper">
+				<!-- <div class="videoWrapper"> -->
 				<iframe
 					src="https://player.vimeo.com/video/350141735"
 					frameborder="0"
