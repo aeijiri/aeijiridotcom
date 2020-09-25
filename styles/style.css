@@ -325,7 +325,7 @@ img {
 .wrapper {
   max-width: 1200px;
   width: 80%;
-  margin: 100px auto 0;
+  margin: 50px auto 0;
 }
 
 .flex {
@@ -459,9 +459,18 @@ img {
   padding: 16px 32px;
 }
 
-iframe {
+.embed-container {
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
   position: absolute;
-  width: 70%;
+  top: 0;
+  width: 75%;
   height: 100%;
 }
 

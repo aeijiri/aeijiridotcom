@@ -1,25 +1,17 @@
-.videoWrapper {
-	// max-width: 900px;
-	// width: 50%;
-	// margin: 0 auto;
+.embed-container {
 	// position: relative;
-	// padding-bottom: 56.25%; /* 16:9 */
-	// padding-top: 25px;
-	// // height: 0;
-	// border: 1px solid red;
-}
-.videoWrapper iframe {
-	// position: absolute;
-	// // // top: 0;
-	// // // left: 0;
-	// width: 100%;
-	// height: 100%;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	// border: 1px solid greenyellow;
 }
 
-iframe {
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
 	position: absolute;
-	// // top: 0;
-	// // left: 0;
-	width: 70%;
+	top: 0;
+	// left: 0;
+	width: 75%;
 	height: 100%;
 }
