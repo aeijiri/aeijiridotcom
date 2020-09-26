@@ -1,11 +1,5 @@
-@media (max-width: 900px) {
-	.header-container {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.menu {
-		position: static;
-		text-align: right;
+@media only screen and (max-width: 480) {
+	input {
+		display: block;
 	}
 }

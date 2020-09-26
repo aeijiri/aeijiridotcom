@@ -16,13 +16,10 @@ const init =() => {
 	$('.closebtn').on('click', function () {
 		closeNav()
 	})
-}
 
+	$('body').css('display', 'none');
+	$('body').fadeIn(700);
 
-$(function () {
-	init();
-	
-	
 	$('#lightSlider').lightSlider({
 		gallery: true,
 		item: 1,
@@ -31,5 +28,13 @@ $(function () {
 		thumbItem: 9
 	});
 	// via http://sachinchoolur.github.io/lightslider/
+
+
+}
+
+
+$(function () {
+	init();
+
 
 });

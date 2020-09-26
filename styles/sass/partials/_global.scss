@@ -12,8 +12,19 @@ $navtext: #e8e8e8;
 body {
 	font-family: "NimbusSemi";
 	font-size: 1.1rem;
+	// display: none;
+}
+
+main {
 	display: flex;
-	// flex-direction: column;
+}
+
+aside,
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 h1 {
@@ -42,6 +53,10 @@ p {
 
 img {
 	padding: 0px 10px;
+}
+
+input {
+	display: none;
 }
 
 .wrapper {
