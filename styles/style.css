@@ -292,16 +292,14 @@ img {
 body {
   font-family: "NimbusSemi";
   font-size: 1.1rem;
-}
-
-main {
+  color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-aside,
-section {
+main,
+nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -325,13 +323,19 @@ h1 {
 
 ul a,
 p,
-footer {
+footer,
+h1 {
   text-transform: uppercase;
 }
 
 a {
   text-decoration: none;
   color: black;
+  padding: 0 15px;
+}
+
+a:hover {
+  font-weight: bolder;
 }
 
 p {
@@ -342,14 +346,9 @@ img {
   padding: 0px 10px;
 }
 
-input {
-  display: none;
-}
-
 .wrapper {
   max-width: 1200px;
   width: 80%;
-  margin: 50px auto 0;
 }
 
 .flex {
@@ -364,15 +363,23 @@ input {
   font-weight: bold;
   font-size: 1.2rem;
   letter-spacing: 5px;
+  color: #7e00ef;
 }
 
-aside {
-  background-color: #e8e8e8;
+header {
   height: 100vh;
 }
 
 nav {
-  margin: 0 20px;
+  position: absolute;
+  display: none;
+  left: -200px;
+  /* push off the screen to the left for future animation */
+  top: 0;
+  height: 100vh;
+  z-index: 999;
+  max-width: 480px;
+  background: #e8e8e8;
 }
 
 nav ul {
@@ -383,15 +390,27 @@ nav ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  list-style: none;
 }
 
-nav ul a:hover {
-  color: #e8e8e8;
+nav a {
+  display: block;
+  padding: 0.75em 15px;
+  line-height: 1em;
 }
 
-nav .icons {
+.icons {
   padding: 20px 0;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 footer {
@@ -404,137 +423,142 @@ i {
   padding: 10px 5px;
 }
 
-#menuToggle {
-  display: block;
-  position: relative;
-  top: 50px;
-  left: 50px;
-  z-index: 1;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+/*
+  ===================================================
+  Base styles for all devices sizes, but mobile first
+  ===================================================
+*/
+/*
+  Hamburger menu icon/'button' styling
+*/
+.menu-toggle {
+  display: inline-block;
+  padding: 0.75em 15px;
+  line-height: 1em;
+  font-size: 1em;
 }
 
-#menuToggle a {
-  text-decoration: none;
-  color: #232323;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
+/*
+  Offscreen menu styling
+  - Default styles + mobile first
+*/
+.main-menu ul {
+  /* Hide shadow w/ -8px while 'closed' */
 }
 
-#menuToggle a:hover {
-  color: tomato;
+/*
+  Generic style for ALL hamburger menu links
+*/
+.main-menu a.menu-close {
+  border-bottom: 0;
+  /* no border for the X 'button' */
+  color: black;
 }
 
-#menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
+/*
+  Hover & focus style
+*/
+/*
+  Close button positioning
+  - Other styles come from `.main-menu a`
+*/
+.main-menu .menu-close {
   position: absolute;
-  top: -7px;
-  left: -5px;
-  cursor: pointer;
-  opacity: 0;
-  /* hide this */
-  z-index: 2;
-  /* and place it over the hamburger */
-  -webkit-touch-callout: none;
+  right: 5px;
+  top: 0;
+  color: black;
 }
 
 /*
- * Just a quick hamburger
- */
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
+  =======================================
+  On small devices, allow it to toggle...
+  =======================================
+*/
+/*
+  Opening hamburger menu!
+  - Using `:target` for non-JavaScript
+  - `[aria-expanded]` will be used if/when JavaScript is added to improve interaction, though it's completely optional.
+*/
+.main-menu:target,
+.main-menu[aria-expanded="true"] {
+  left: 0;
+  /* slide from -200px to the left edge at 0 */
+  outline: none;
+  /* fix box-shadow so it shows now */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: left 1s ease, -webkit-box-shadow 1s ease;
+  transition: left 1s ease, -webkit-box-shadow 1s ease;
+  transition: left 1s ease, box-shadow 1s ease;
+  transition: left 1s ease, box-shadow 1s ease, -webkit-box-shadow 1s ease;
+}
+
+/*
+  Close menu button
+  - Make sure it's on top!
+  - Basically, when `.main-menu` is the target of the click, get its child `.menu-close` link
+*/
+.main-menu:target .menu-close,
+.main-menu[aria-expanded="true"] .menu-close {
+  z-index: 1001;
+  color: black;
+}
+
+/*
+  Hamburger menu list
+  - Make sure it's on top!
+  - Basically, when `.main-menu` is the target of the click, get its child `<ul>`
+*/
+.main-menu:target ul,
+.main-menu[aria-expanded="true"] ul {
   position: relative;
-  background: #cdcdcd;
-  border-radius: 3px;
-  z-index: 1;
-  -webkit-transform-origin: 4px 0px;
-          transform-origin: 4px 0px;
-  -webkit-transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
-
-#menuToggle span:first-child {
-  -webkit-transform-origin: 0% 0%;
-          transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-  -webkit-transform-origin: 0% 100%;
-          transform-origin: 0% 100%;
+  z-index: 1000;
 }
 
 /*
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#menuToggle input:checked ~ span {
-  opacity: 1;
-  -webkit-transform: rotate(45deg) translate(-2px, -1px);
-          transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-
-/*
- * But let's hide the middle one.
- */
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
-          transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/*
- * Ohyeah and the last one should go the other direction
- */
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  -webkit-transform: rotate(-45deg) translate(0, -1px);
-          transform: rotate(-45deg) translate(0, -1px);
-}
-
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
-#menu {
+  Backdrop
+  - Show backdrop
+  - Basically, when `.main-menu` is the target of the click, get its sibling `.backdrop`
+  - Note: we could use `.main-menu:target:after`, but
+ it wouldn't be clickable.
+*/
+.main-menu:target + .backdrop,
+.main-menu[aria-expanded="true"] + .backdrop {
   position: absolute;
-  width: 300px;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
-  background: #ededed;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-  -webkit-transform-origin: 0% 0%;
-          transform-origin: 0% 0%;
-  -webkit-transform: translate(-100%, 0);
-          transform: translate(-100%, 0);
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
-
-#menu li {
-  padding: 10px 0;
-  font-size: 22px;
+  display: block;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 998;
+  background: #e8e8e8;
+  cursor: default;
 }
 
 /*
- * And let's slide it in from the left
- */
-#menuToggle input:checked ~ ul {
-  -webkit-transform: none;
-          transform: none;
+  ======================================================
+  If CSS supports `fixed`, like all good modern browsers
+  ======================================================
+*/
+@supports (position: fixed) {
+  /*
+    Allow backdrop to stay fixed and not "scroll"
+  */
+  .main-menu,
+  .main-menu:target + .backdrop,
+  .main-menu[aria-expanded="true"] + .backdrop {
+    position: fixed;
+  }
 }
 
 ul {
@@ -614,8 +638,37 @@ img {
   height: 100%;
 }
 
-@media only screen and (max-width: 480) {
-  input {
-    display: block;
+/*
+  ================================
+  Larger screen styling
+  ================================
+*/
+/*
+  Horizontal menu (i.e. no hamburger)
+*/
+@media (min-width: 768px) {
+  /* Hide hamburger menu/'button' */
+  .menu-toggle,
+  .main-menu .menu-close {
+    display: none;
+  }
+  /* Undo positioning of off-canvas menu */
+  .main-menu {
+    position: relative;
+    left: auto;
+    top: auto;
+    background-color: #e8e8e8;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* allows for full height of menu */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main-menu a {
+    border: 0 !important;
+    /* Remove borders from off-canvas styling */
   }
 }

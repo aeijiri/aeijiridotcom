@@ -1,21 +1,22 @@
 const openNav = () => {
+	
 	document.getElementById("mySidenav").style.width = "375px";
-	document.getElementById("main").style.marginRight = "375px";
+	document.getElementById("main").style.marginLeft = "375px";
 }
 
 const closeNav = () => {
 	document.getElementById("mySidenav").style.width = "0";
-	document.getElementById("main").style.marginRight = "0";
+	document.getElementById("main").style.marginLeft = "0";
 }
 
 const init =() => {
-	$('.menu').on("click", function () {
-		openNav()
-	})
+	// $('.menu').on("click", function () {
+	// 	openNav()
+	// })
 
-	$('.closebtn').on('click', function () {
-		closeNav()
-	})
+	// $('.closebtn').on('click', function () {
+	// 	closeNav()
+	// })
 
 	$('body').css('display', 'none');
 	$('body').fadeIn(700);

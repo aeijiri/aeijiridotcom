@@ -2,25 +2,25 @@
 	font-family: "NimbusSemi";
 	src: url("../styles/fonts/NimbusSansRound-SemiBold/font.woff") format("woff");
 }
-$navtext: #e8e8e8;
 
 @font-face {
 	font-family: "NimbusBold";
 	src: url("../styles/fonts/NimbusSansRound-Black/font.woff") format("woff");
 }
+$navtext: #e8e8e8;
+$prmtext: black;
+$scdtext: white;
 
 body {
 	font-family: "NimbusSemi";
 	font-size: 1.1rem;
+	color: $prmtext;
+	display: flex;
 	// display: none;
 }
 
-main {
-	display: flex;
-}
-
-aside,
-section {
+main,
+nav {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -35,16 +35,22 @@ h1 {
 
 ul a,
 p,
-footer {
+footer,
+h1 {
 	text-transform: uppercase;
 }
+
 a {
+	// border: 0 !important; /* Remove borders from off-canvas styling */
 	text-decoration: none;
 	color: black;
+	padding: 0 15px;
 
-	// &:hover {
-	// 	color: $navtext;
-	// }
+	&:hover {
+		// font-size: 1.2rem;
+		font-weight: bolder;
+		// letter-spacing: 5px;
+	}
 }
 
 p {
@@ -55,14 +61,10 @@ img {
 	padding: 0px 10px;
 }
 
-input {
-	display: none;
-}
-
 .wrapper {
 	max-width: 1200px;
 	width: 80%;
-	margin: 50px auto 0;
+	// margin: 50px auto 0;
 	// padding-top: 100px;
 }
 
@@ -76,4 +78,5 @@ input {
 	font-weight: bold;
 	font-size: 1.2rem;
 	letter-spacing: 5px;
+	color: #7e00ef;
 }

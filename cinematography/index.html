@@ -4,8 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>aeijiri.com</title>
+
 		<!-- style sheets -->
-		<link rel="stylesheet" href="./styles/style.css" />
+		<link rel="stylesheet" href="../styles/style.css" />
+		<!-- jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="../scripts/jquery.js"></script>
+		<script src="../scripts/lightslider.js"></script>
+		<script src="../scripts/script.js"></script>
 		<!-- fontawesome -->
 		<link
 			rel="stylesheet"
@@ -13,10 +19,6 @@
 			integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
 			crossorigin="anonymous"
 		/>
-		<!-- js -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="./scripts/jquery.js"></script>
-		<script src="./scripts/script.js"></script>
 	</head>
 
 	<body>
@@ -32,7 +34,7 @@
 			</a>
 
 			<nav id="main-menu" class="main-menu" aria-label="Main menu">
-				<h1><a href="">adrian muir</a></h1>
+				<h1><a href="../index.html">adrian muir</a></h1>
 				<a
 					href="#main-menu-toggle"
 					id="main-menu-close"
@@ -45,8 +47,8 @@
 				<h2 id="main-menu-heading" class="sr-only">Main menu</h2>
 				<ul aria-labelledby="main-menu-heading">
 					<li><a href="#">About</a></li>
-					<li><a href="./photography/">Photography</a></li>
-					<li><a href="./cinematography/">Cinematography</a></li>
+					<li><a href="../photography/">Photography</a></li>
+					<li><a href="/" class="active">Cinematography</a></li>
 				</ul>
 				<a
 					href="#main-menu-toggle"
@@ -70,26 +72,16 @@
 
 		<main>
 			<div class="wrapper">
-				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae sed
-					nesciunt impedit ea rem molestias labore excepturi repellat omnis
-					vitae optio iste deleniti quo facilis nam ab ipsum nemo at, nihil quis
-					maiores neque, rerum hic tempora? Quas nostrum dicta quia unde in,
-					esse accusantium eius assumenda ducimus fugit doloribus.
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aperiam
-					molestias unde commodi sapiente magni quas quia laudantium voluptatum
-					incidunt? Ex nisi dolore explicabo debitis accusamus consequuntur,
-					laborum error ab esse, tenetur cum distinctio reprehenderit deserunt
-					tempora incidunt velit. Reiciendis adipisci, fugiat vitae ea nulla
-					aspernatur culpa iusto cum totam unde debitis voluptate mollitia
-					possimus id provident, quod exercitationem amet facere! Obcaecati,
-					ullam explicabo! Natus ea doloribus quos dicta nisi rem quaerat
-					cupiditate quam quod quibusdam esse ab, recusandae soluta rerum sint
-					alias odit dolorum ex temporibus neque assumenda. Suscipit dolorem
-					obcaecati quo a natus dicta repellendus veritatis voluptas ad.
-				</p>
+				<!-- <div class="videoWrapper"> -->
+				<div class="embed-container">
+					<iframe
+						src="https://player.vimeo.com/video/350141735"
+						width="560"
+						height="315"
+						frameborder="0"
+					></iframe>
+				</div>
+				<!-- </div> -->
 			</div>
 		</main>
 	</body>

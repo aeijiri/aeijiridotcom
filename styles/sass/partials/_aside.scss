@@ -1,25 +1,40 @@
-aside {
-	background-color: $navtext;
+header {
 	height: 100vh;
 }
+
 nav {
-	margin: 0 20px;
+	position: absolute;
+	display: none;
+	left: -200px; /* push off the screen to the left for future animation */
+	top: 0;
+	height: 100vh;
+	// overflow-y: scroll;
+	// overflow-x: visible;
+	// transition: left 1s ease, box-shadow 1s ease;
+	z-index: 999;
+	max-width: 480px;
+	background: $navtext;
 	ul {
 		display: flex;
 		flex-direction: column;
-
-		a:hover {
-			color: $navtext;
-		}
+		list-style: none;
 	}
 
-	.icons {
-		padding: 20px 0;
-		text-align: center;
+	a {
+		display: block;
+		padding: 0.75em 15px;
+		line-height: 1em;
 	}
 }
+.icons {
+	padding: 20px 0;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 footer {
-	// height: 10vh;
 	padding: 20px 0;
 	text-align: center;
 }
@@ -29,129 +44,180 @@ i {
 	padding: 10px 5px;
 }
 
-// hamburger menu https://codepen.io/erikterwan/pen/EVzeRP
-#menuToggle {
-	display: block;
-	position: relative;
-	top: 50px;
-	left: 50px;
+// hamburger menu https://codepen.io/markcaron/pen/pPZVWO
 
-	z-index: 1;
+// hamgburger menu
 
-	user-select: none;
+/*
+  ===================================================
+  Base styles for all devices sizes, but mobile first
+  ===================================================
+*/
+
+/*
+  Hamburger menu icon/'button' styling
+*/
+.menu-toggle {
+	display: inline-block;
+	padding: 0.75em 15px;
+	line-height: 1em;
+	font-size: 1em;
+
+	// color: #333;
 }
 
-#menuToggle a {
-	text-decoration: none;
-	color: #232323;
-
-	transition: color 0.3s ease;
+/*
+  Offscreen menu styling
+  - Default styles + mobile first
+*/
+.main-menu {
+	// position: absolute;
+	// display: none;
+	// left: -200px; /* push off the screen to the left for future animation */
+	// top: 0;
+	// height: 100vh;
+	// // overflow-y: scroll;
+	// // overflow-x: visible;
+	// // transition: left 1s ease, box-shadow 1s ease;
+	// z-index: 999;
+	// max-width: 480px;
+	// background: $navtext;
 }
 
-#menuToggle a:hover {
-	color: tomato;
+.main-menu ul {
+	// list-style: none;
+	// margin: 0;
+	// padding: 2.5em 0 0;
+	/* Hide shadow w/ -8px while 'closed' */
+	// box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+	// min-height: 100%;
+	// width: auto;
+	// background: $navtext;
 }
 
-#menuToggle input {
-	display: block;
-	width: 40px;
-	height: 32px;
+/*
+  Generic style for ALL hamburger menu links
+*/
+.main-menu a {
+	// display: block;
+	// padding: 0.75em 15px;
+	// line-height: 1em;
+	// color: black;
+	// font-size: 1em;
+	// color: #fff;
+	// text-decoration: none;
+	// border-bottom: 1px solid #383838;
+}
+
+.main-menu a.menu-close {
+	border-bottom: 0; /* no border for the X 'button' */
+	color: black;
+}
+
+.main-menu li:first-child a {
+	// border-top: 1px solid #383838; /* add top border only for the first link */
+}
+
+/*
+  Hover & focus style
+*/
+// .main-menu a:hover,
+// .main-menu a:focus {
+// 	// background: #333;
+// 	text-decoration: underline;
+// }
+
+/*
+  Close button positioning
+  - Other styles come from `.main-menu a`
+*/
+.main-menu .menu-close {
 	position: absolute;
-	top: -7px;
-	left: -5px;
-
-	cursor: pointer;
-
-	opacity: 0; /* hide this */
-	z-index: 2; /* and place it over the hamburger */
-
-	-webkit-touch-callout: none;
+	right: 5px;
+	top: 0;
+	color: black;
 }
 
 /*
- * Just a quick hamburger
- */
-#menuToggle span {
-	display: block;
-	width: 33px;
-	height: 4px;
-	margin-bottom: 5px;
+  =======================================
+  On small devices, allow it to toggle...
+  =======================================
+*/
+
+/*
+  Opening hamburger menu!
+  - Using `:target` for non-JavaScript
+  - `[aria-expanded]` will be used if/when JavaScript is added to improve interaction, though it's completely optional.
+*/
+.main-menu:target,
+.main-menu[aria-expanded="true"] {
+	// display: block;
+	left: 0; /* slide from -200px to the left edge at 0 */
+	outline: none;
+	/* fix box-shadow so it shows now */
+	// box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: left 1s ease, box-shadow 1s ease;
+}
+
+/*
+  Close menu button
+  - Make sure it's on top!
+  - Basically, when `.main-menu` is the target of the click, get its child `.menu-close` link
+*/
+.main-menu:target .menu-close,
+.main-menu[aria-expanded="true"] .menu-close {
+	z-index: 1001;
+	color: black;
+}
+
+/*
+  Hamburger menu list
+  - Make sure it's on top!
+  - Basically, when `.main-menu` is the target of the click, get its child `<ul>`
+*/
+.main-menu:target ul,
+.main-menu[aria-expanded="true"] ul {
 	position: relative;
-
-	background: #cdcdcd;
-	border-radius: 3px;
-
-	z-index: 1;
-
-	transform-origin: 4px 0px;
-
-	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-		background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-}
-
-#menuToggle span:first-child {
-	transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-	transform-origin: 0% 100%;
+	z-index: 1000;
 }
 
 /*
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#menuToggle input:checked ~ span {
-	opacity: 1;
-	transform: rotate(45deg) translate(-2px, -1px);
-	background: #232323;
-}
-
-/*
- * But let's hide the middle one.
- */
-#menuToggle input:checked ~ span:nth-last-child(3) {
-	opacity: 0;
-	transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/*
- * Ohyeah and the last one should go the other direction
- */
-#menuToggle input:checked ~ span:nth-last-child(2) {
-	transform: rotate(-45deg) translate(0, -1px);
-}
-
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
-#menu {
+  Backdrop
+  - Show backdrop
+  - Basically, when `.main-menu` is the target of the click, get its sibling `.backdrop`
+  - Note: we could use `.main-menu:target:after`, but
+ it wouldn't be clickable.
+*/
+.main-menu:target + .backdrop,
+.main-menu[aria-expanded="true"] + .backdrop {
 	position: absolute;
-	width: 300px;
-	margin: -100px 0 0 -50px;
-	padding: 50px;
-	padding-top: 125px;
-
-	background: #ededed;
-	list-style-type: none;
-	-webkit-font-smoothing: antialiased;
-	/* to stop flickering of text in safari */
-
-	transform-origin: 0% 0%;
-	transform: translate(-100%, 0);
-
-	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
-
-#menu li {
-	padding: 10px 0;
-	font-size: 22px;
+	display: block;
+	left: 0;
+	top: 0;
+	// width: 100%;
+	height: 100%;
+	z-index: 998;
+	background: $navtext;
+	// background: rgba(0, 0, 0, 0.85);
+	cursor: default;
 }
 
 /*
- * And let's slide it in from the left
- */
-#menuToggle input:checked ~ ul {
-	transform: none;
+  ======================================================
+  If CSS supports `fixed`, like all good modern browsers
+  ======================================================
+*/
+@supports (position: fixed) {
+	/*
+    Allow backdrop to stay fixed and not "scroll"
+  */
+	.main-menu,
+	.main-menu:target + .backdrop,
+	.main-menu[aria-expanded="true"] + .backdrop {
+		position: fixed;
+	}
 }
