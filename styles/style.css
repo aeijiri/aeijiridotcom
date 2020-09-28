@@ -321,6 +321,11 @@ h1 {
   text-align: center;
 }
 
+h1:hover {
+  -webkit-transform: none;
+          transform: none;
+}
+
 ul a,
 p,
 footer,
@@ -331,11 +336,19 @@ h1 {
 a {
   text-decoration: none;
   color: black;
-  padding: 0 15px;
+  display: block;
+  padding: 0.75em 0;
 }
 
-a:hover {
-  font-weight: bolder;
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
 }
 
 p {
@@ -359,11 +372,8 @@ img {
       flex-wrap: wrap;
 }
 
-.active {
-  font-weight: bold;
-  font-size: 1.2rem;
-  letter-spacing: 5px;
-  color: #7e00ef;
+.gif {
+  opacity: 0.8;
 }
 
 header {
@@ -371,6 +381,7 @@ header {
 }
 
 nav {
+  padding: 0 15px;
   position: absolute;
   display: none;
   left: -200px;
@@ -380,23 +391,6 @@ nav {
   z-index: 999;
   max-width: 480px;
   background: #e8e8e8;
-}
-
-nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  list-style: none;
-}
-
-nav a {
-  display: block;
-  padding: 0.75em 15px;
-  line-height: 1em;
 }
 
 .icons {
@@ -423,6 +417,19 @@ i {
   padding: 10px 5px;
 }
 
+i:hover,
+a:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.active {
+  font-weight: bold;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  color: #7e00ef;
+}
+
 /*
   ===================================================
   Base styles for all devices sizes, but mobile first
@@ -438,26 +445,12 @@ i {
   font-size: 1em;
 }
 
-/*
-  Offscreen menu styling
-  - Default styles + mobile first
-*/
-.main-menu ul {
-  /* Hide shadow w/ -8px while 'closed' */
-}
-
-/*
-  Generic style for ALL hamburger menu links
-*/
 .main-menu a.menu-close {
   border-bottom: 0;
   /* no border for the X 'button' */
   color: black;
 }
 
-/*
-  Hover & focus style
-*/
 /*
   Close button positioning
   - Other styles come from `.main-menu a`
@@ -621,21 +614,6 @@ img {
   color: black;
   font-size: 16px;
   padding: 16px 32px;
-}
-
-.embed-container {
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-  position: absolute;
-  top: 0;
-  width: 75%;
-  height: 100%;
 }
 
 /*
