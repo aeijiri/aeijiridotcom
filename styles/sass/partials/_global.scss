@@ -10,13 +10,13 @@
 $navtext: #e8e8e8;
 $prmtext: black;
 $scdtext: white;
+$highlight: #7e00ef;
 
 body {
 	font-family: "NimbusSemi";
 	font-size: 1.1rem;
 	color: $prmtext;
 	display: flex;
-	// display: none;
 }
 
 main,
@@ -31,6 +31,8 @@ h1 {
 	font-family: "NimbusBold";
 	font-size: 3rem;
 	text-align: center;
+	word-wrap: break-word;
+	padding: 0 10px;
 }
 
 ul a,
@@ -41,16 +43,16 @@ h1 {
 }
 
 a {
-	// border: 0 !important; /* Remove borders from off-canvas styling */
 	text-decoration: none;
-	color: black;
-	padding: 0 15px;
+	color: $prmtext;
 
 	&:hover {
-		// font-size: 1.2rem;
-		font-weight: bolder;
-		// letter-spacing: 5px;
+		font-weight: bold;
 	}
+}
+
+li {
+	margin: 0 10px;
 }
 
 p {
@@ -64,23 +66,23 @@ img {
 .wrapper {
 	max-width: 1200px;
 	width: 80%;
-	// margin: 50px auto 0;
-	// padding-top: 100px;
 }
 
 .flex {
 	display: flex;
 	flex-wrap: wrap;
-	// width: 150px;
 }
 
 .active {
 	font-weight: bold;
-	font-size: 1.2rem;
-	letter-spacing: 5px;
-	color: #7e00ef;
+	// transform: scale(1.1);
+	color: $highlight;
 }
 
-.gif {
-	opacity: 0.8;
+img {
+	opacity: 0.85;
+
+	&:hover {
+		opacity: 1;
+	}
 }

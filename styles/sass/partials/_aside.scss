@@ -8,9 +8,6 @@ nav {
 	left: -200px; /* push off the screen to the left for future animation */
 	top: 0;
 	height: 100vh;
-	// overflow-y: scroll;
-	// overflow-x: visible;
-	// transition: left 1s ease, box-shadow 1s ease;
 	z-index: 999;
 	max-width: 480px;
 	background: $navtext;
@@ -66,66 +63,10 @@ i {
 	// color: #333;
 }
 
-/*
-  Offscreen menu styling
-  - Default styles + mobile first
-*/
-.main-menu {
-	// position: absolute;
-	// display: none;
-	// left: -200px; /* push off the screen to the left for future animation */
-	// top: 0;
-	// height: 100vh;
-	// // overflow-y: scroll;
-	// // overflow-x: visible;
-	// // transition: left 1s ease, box-shadow 1s ease;
-	// z-index: 999;
-	// max-width: 480px;
-	// background: $navtext;
-}
-
-.main-menu ul {
-	// list-style: none;
-	// margin: 0;
-	// padding: 2.5em 0 0;
-	/* Hide shadow w/ -8px while 'closed' */
-	// box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
-	// min-height: 100%;
-	// width: auto;
-	// background: $navtext;
-}
-
-/*
-  Generic style for ALL hamburger menu links
-*/
-.main-menu a {
-	// display: block;
-	// padding: 0.75em 15px;
-	// line-height: 1em;
-	// color: black;
-	// font-size: 1em;
-	// color: #fff;
-	// text-decoration: none;
-	// border-bottom: 1px solid #383838;
-}
-
 .main-menu a.menu-close {
 	border-bottom: 0; /* no border for the X 'button' */
-	color: black;
+	color: $prmtext;
 }
-
-.main-menu li:first-child a {
-	// border-top: 1px solid #383838; /* add top border only for the first link */
-}
-
-/*
-  Hover & focus style
-*/
-// .main-menu a:hover,
-// .main-menu a:focus {
-// 	// background: #333;
-// 	text-decoration: underline;
-// }
 
 /*
   Close button positioning
@@ -135,7 +76,7 @@ i {
 	position: absolute;
 	right: 5px;
 	top: 0;
-	color: black;
+	color: $prmtext;
 }
 
 /*
@@ -151,11 +92,8 @@ i {
 */
 .main-menu:target,
 .main-menu[aria-expanded="true"] {
-	// display: block;
 	left: 0; /* slide from -200px to the left edge at 0 */
 	outline: none;
-	/* fix box-shadow so it shows now */
-	// box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -171,7 +109,7 @@ i {
 .main-menu:target .menu-close,
 .main-menu[aria-expanded="true"] .menu-close {
 	z-index: 1001;
-	color: black;
+	color: rgb(85, 78, 78);
 }
 
 /*

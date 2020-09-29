@@ -319,6 +319,8 @@ h1 {
   font-family: "NimbusBold";
   font-size: 3rem;
   text-align: center;
+  word-wrap: break-word;
+  padding: 0 10px;
 }
 
 ul a,
@@ -331,11 +333,14 @@ h1 {
 a {
   text-decoration: none;
   color: black;
-  padding: 0 15px;
 }
 
 a:hover {
-  font-weight: bolder;
+  font-weight: bold;
+}
+
+li {
+  margin: 0 10px;
 }
 
 p {
@@ -361,13 +366,15 @@ img {
 
 .active {
   font-weight: bold;
-  font-size: 1.2rem;
-  letter-spacing: 5px;
   color: #7e00ef;
 }
 
-.gif {
-  opacity: 0.8;
+img {
+  opacity: 0.85;
+}
+
+img:hover {
+  opacity: 1;
 }
 
 header {
@@ -442,26 +449,12 @@ i {
   font-size: 1em;
 }
 
-/*
-  Offscreen menu styling
-  - Default styles + mobile first
-*/
-.main-menu ul {
-  /* Hide shadow w/ -8px while 'closed' */
-}
-
-/*
-  Generic style for ALL hamburger menu links
-*/
 .main-menu a.menu-close {
   border-bottom: 0;
   /* no border for the X 'button' */
   color: black;
 }
 
-/*
-  Hover & focus style
-*/
 /*
   Close button positioning
   - Other styles come from `.main-menu a`
@@ -488,7 +481,6 @@ i {
   left: 0;
   /* slide from -200px to the left edge at 0 */
   outline: none;
-  /* fix box-shadow so it shows now */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -516,7 +508,7 @@ i {
 .main-menu:target .menu-close,
 .main-menu[aria-expanded="true"] .menu-close {
   z-index: 1001;
-  color: black;
+  color: #554e4e;
 }
 
 /*
@@ -612,6 +604,7 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 312px;
   }
   .main-menu a {
     border: 0 !important;
