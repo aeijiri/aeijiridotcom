@@ -182,26 +182,26 @@ const content = [
 
 ]
 
-const openNav = () => {
-	
-	document.getElementById("mySidenav").style.width = "375px";
-	document.getElementById("main").style.marginLeft = "375px";
-}
+// const openNav = () => {
 
-const closeNav = () => {
-	document.getElementById("mySidenav").style.width = "0";
-	document.getElementById("main").style.marginLeft = "0";
-}
+// 	document.getElementById("mySidenav").style.width = "375px";
+// 	document.getElementById("main").style.marginLeft = "375px";
+// }
 
-const init =() => {
+// const closeNav = () => {
+// 	document.getElementById("mySidenav").style.width = "0";
+// 	document.getElementById("main").style.marginLeft = "0";
+// }
 
-	// content.forEach(block => {
-	// 	$('#lightSlider').append(`
-	// 		<li data-thumb="${block.image} class="image"> 
-	// 			<img src="${block.image}" alt="" />
-	// 		</li>
-	// 	`);
-	// });
+const init = () => {
+
+	content.forEach(block => {
+		$('main ul').append(`
+			<li data-thumb="${block.image}" class="image">
+				<img src="${block.image}" alt="" />
+			</li>
+        `);
+	});
 
 	// $('.menu').on("click", function () {
 	// 	openNav()

@@ -21,88 +21,41 @@ img {
 
 // hover overlay
 //from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity
-.container {
-	position: relative;
-	width: 50%;
-}
-
-.image {
-	opacity: 1;
-	display: block;
-	width: 100%;
-	height: auto;
-	transition: 0.5s ease;
-	backface-visibility: hidden;
-}
-
-.middle {
-	transition: 0.5s ease;
-	opacity: 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	text-align: center;
-}
-
-.container:hover .image {
-	opacity: 0.5;
-}
-
-.container:hover .middle {
-	opacity: 1;
-}
-
-.text {
-	color: black;
-	font-size: 16px;
-	padding: 16px 32px;
-}
-
-//horizontal scroll via https://codepen.io/pieter-biesemans/pen/BQBWXX
-
-// $finalHeight: 700px;
-// $finalWidth: 3 * $finalHeight;
-// $scrollBarHeight: 1px;
-
-// ::-webkit-scrollbar {
-// 	width: $scrollBarHeight;
-// 	height: $scrollBarHeight;
+// .container {
+// 	position: relative;
+// 	width: 50%;
 // }
 
-// ::-webkit-scrollbar-button {
-// 	width: $scrollBarHeight;
-// 	height: $scrollBarHeight;
-// }
-
-// body {
-//   background: #111;
-// }
-
-// .horizontal-scroll-wrapper {
+// .image {
+// 	opacity: 1;
 // 	display: block;
-// 	width: calc(#{$finalHeight} + #{$scrollBarHeight});
-// 	max-height: $finalWidth;
-// 	margin: 0;
-// 	padding-top: $scrollBarHeight;
-// 	overflow-y: auto;
-// 	overflow-x: hidden;
-// 	transform: rotate(-90deg) translateY(-$finalHeight);
-// 	transform-origin: right top;
-// 	& > div {
-// 		display: block;
-// 		padding: 5px;
-// 		transform: rotate(90deg);
-// 		transform-origin: right top;
-// 	}
+// 	width: 100%;
+// 	height: auto;
+// 	transition: 0.5s ease;
+// 	backface-visibility: hidden;
 // }
 
-// .squares {
-// 	padding: $finalHeight 0 0 0;
-// 	& > div {
-// 		width: $finalHeight;
-// 		height: $finalHeight;
-// 		margin: 10px 0;
-// 	}
+// .middle {
+// 	transition: 0.5s ease;
+// 	opacity: 0;
+// 	position: absolute;
+// 	top: 50%;
+// 	left: 50%;
+// 	transform: translate(-50%, -50%);
+// 	-ms-transform: translate(-50%, -50%);
+// 	text-align: center;
+// }
+
+// .container:hover .image {
+// 	opacity: 0.5;
+// }
+
+// .container:hover .middle {
+// 	opacity: 1;
+// }
+
+// .text {
+// 	color: black;
+// 	font-size: 16px;
+// 	padding: 16px 32px;
 // }
