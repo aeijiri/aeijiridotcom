@@ -372,6 +372,16 @@ img {
   color: #7e00ef;
 }
 
+section {
+  height: 100vh;
+  width: 100vw;
+}
+
+section img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 header {
   height: 100vh;
 }
@@ -386,7 +396,6 @@ nav {
   z-index: 999;
   max-width: 480px;
   background: #e8e8e8;
-  padding: 0 15px;
 }
 
 nav ul {
@@ -513,23 +522,89 @@ i {
   }
 }
 
-ul {
-  list-style: none outside none;
-  padding-left: 0;
-  margin-bottom: 0;
+.sliderContainer {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-li {
-  display: block;
-  float: left;
-  margin-right: 6px;
-  cursor: pointer;
+.sliderContainer img:first-child {
+  position: relative;
+  width: 100%;
+  left: 0%;
+  top: 0;
 }
 
 img {
-  display: block;
-  height: auto;
-  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  left: -100%;
+  top: 0;
+}
+
+.nextCircle {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 85%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  opacity: 0.5;
+  background-color: black;
+  z-index: 19;
+}
+
+.next {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+  z-index: 20;
+}
+
+.nextCircle:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.fa.fa-arrow-right,
+.fa.fa-arrow-left {
+  font-size: 30px;
+}
+
+.prevCircle {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 85%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  opacity: 0.5;
+  background-color: black;
+  z-index: 19;
+}
+
+.previous {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+  z-index: 20;
+}
+
+.prevCircle:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .reel {
@@ -573,6 +648,9 @@ img {
     border: 0 !important;
     /* Remove borders from off-canvas styling */
   }
+  img {
+    padding: 75px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -583,5 +661,8 @@ img {
   }
   .wrapper {
     width: 100%;
+  }
+  img {
+    padding: 50px;
   }
 }

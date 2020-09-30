@@ -21,6 +21,9 @@
 	.main-menu a {
 		border: 0 !important; /* Remove borders from off-canvas styling */
 	}
+	img {
+		padding: 75px;
+	}
 }
 // smaller screens
 @media (max-width: 768px) {
@@ -30,5 +33,8 @@
 	.wrapper {
 		// max-width: 768px;
 		width: 100%;
+	}
+	img {
+		padding: 50px;
 	}
 }
