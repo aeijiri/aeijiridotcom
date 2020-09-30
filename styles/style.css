@@ -598,10 +598,6 @@ i {
   cursor: pointer;
 }
 
-.reel {
-  width: 100%;
-}
-
 .reel .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -609,6 +605,13 @@ i {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.reel .wrapper iframe {
+  width: 100%;
+  height: 100%;
 }
 
 /*
