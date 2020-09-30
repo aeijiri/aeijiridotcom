@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>aeijiri.com</title>
-	
+
 		<!-- style sheets -->
 		<link rel="stylesheet" href="../styles/style.css" />
-		<link rel="stylesheet" href="../styles/lightslider.css">
+		<link rel="stylesheet" href="../styles/lightslider.css" />
 		<!-- fontawesome -->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-			integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+			integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+			crossorigin="anonymous"
+		/>
 		<!-- js -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="../scripts/jquery.js"></script>
@@ -19,46 +22,62 @@
 		<script src="../scripts/script.js"></script>
 	</head>
 
-<body>
+	<body>
 		<header>
-			<a href="#main-menu" id="main-menu-toggle" class="menu-toggle" aria-label="Open main menu">
+			<a
+				href="#main-menu"
+				id="main-menu-toggle"
+				class="menu-toggle"
+				aria-label="Open main menu"
+			>
 				<span class="sr-only">Open main menu</span>
 				<span class="fa fa-bars" aria-hidden="true"></span>
 			</a>
-		
+
 			<nav id="main-menu" class="main-menu" aria-label="Main menu">
 				<h1><a href="../index.html">adrian muir</a></h1>
-				<a href="#main-menu-toggle" id="main-menu-close" class="menu-close" aria-label="Close main menu">
+				<a
+					href="#main-menu-toggle"
+					id="main-menu-close"
+					class="menu-close"
+					aria-label="Close main menu"
+				>
 					<span class="sr-only">Close main menu</span>
-					<span class="fa fa-close" aria-hidden="true"></span>
+					<span aria-hidden="true">&#10005;</span>
 				</a>
 				<h2 id="main-menu-heading" class="sr-only">Main menu</h2>
 				<ul aria-labelledby="main-menu-heading">
-					<li><a href="#" >About</a></li>
+					<li><a href="#">About</a></li>
 					<li><a href="" class="active">Photography</a></li>
 					<li><a href="../cinematography/">Cinematography</a></li>
 				</ul>
-				<a href="#main-menu-toggle" class="backdrop" tabindex="1" aria-hidden="true"></a>
+				<a
+					href="#main-menu-toggle"
+					class="backdrop"
+					tabindex="1"
+					aria-hidden="true"
+				></a>
 				<div class="icons">
-					<a href="https://www.instagram.com/aeijri/"><i class="fab fa-instagram"></i></a>
-					<a href="https://vimeo.com/adrianjamesmuir"><i class="fab fa-vimeo-v"></i></a>
+					<a href="https://www.instagram.com/aeijri/"
+						><i class="fab fa-instagram"></i
+					></a>
+					<a href="https://vimeo.com/adrianjamesmuir"
+						><i class="fab fa-vimeo-v"></i
+					></a>
 					<a href="mailto: info@aeijri.com"><i class="far fa-envelope"></i></a>
 				</div>
-		
+
 				<footer>Aeijri &#169; 2020</footer>
 			</nav>
 		</header>
 
-	<main>
-		<div class="wrapper">
-			<div class="demo">
-				<!-- js append here -->
-				<ul id="lightSlider">
-				</ul>
+		<main>
+			<div class="wrapper">
+				<div class="demo">
+					<!-- js append here -->
+					<ul id="lightSlider"></ul>
+				</div>
 			</div>
-		</div>
-		</div>
-	</main>
-</body>
-
+		</main>
+	</body>
 </html>

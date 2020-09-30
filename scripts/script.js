@@ -195,8 +195,8 @@ const init = () => {
 
 
 
-	$('body').css('display', 'none');
-	$('body').fadeIn(1000);
+	// $('body').css('display', 'none');
+	// $('body').fadeIn(1000);
 
 	$('#lightSlider').lightSlider({
 		gallery: true,

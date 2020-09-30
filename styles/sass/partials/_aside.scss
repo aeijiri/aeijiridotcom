@@ -11,6 +11,7 @@ nav {
 	z-index: 999;
 	max-width: 480px;
 	background: $navtext;
+	padding: 0 15px;
 	ul {
 		display: flex;
 		flex-direction: column;
@@ -29,6 +30,12 @@ nav {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	a {
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
 }
 
 footer {
@@ -43,53 +50,27 @@ i {
 
 // hamburger menu https://codepen.io/markcaron/pen/pPZVWO
 
-// hamgburger menu
-
-/*
-  ===================================================
-  Base styles for all devices sizes, but mobile first
-  ===================================================
-*/
-
-/*
-  Hamburger menu icon/'button' styling
-*/
 .menu-toggle {
 	display: inline-block;
 	padding: 0.75em 15px;
 	line-height: 1em;
 	font-size: 1em;
-
-	// color: #333;
 }
 
 .main-menu a.menu-close {
-	border-bottom: 0; /* no border for the X 'button' */
+	border-bottom: 0;
 	color: $prmtext;
 }
 
-/*
-  Close button positioning
-  - Other styles come from `.main-menu a`
-*/
 .main-menu .menu-close {
 	position: absolute;
 	right: 5px;
 	top: 0;
-	color: $prmtext;
+	span {
+		color: $prmtext;
+	}
 }
 
-/*
-  =======================================
-  On small devices, allow it to toggle...
-  =======================================
-*/
-
-/*
-  Opening hamburger menu!
-  - Using `:target` for non-JavaScript
-  - `[aria-expanded]` will be used if/when JavaScript is added to improve interaction, though it's completely optional.
-*/
 .main-menu:target,
 .main-menu[aria-expanded="true"] {
 	left: 0; /* slide from -200px to the left edge at 0 */
@@ -101,58 +82,31 @@ i {
 	transition: left 1s ease, box-shadow 1s ease;
 }
 
-/*
-  Close menu button
-  - Make sure it's on top!
-  - Basically, when `.main-menu` is the target of the click, get its child `.menu-close` link
-*/
 .main-menu:target .menu-close,
 .main-menu[aria-expanded="true"] .menu-close {
 	z-index: 1001;
 	color: rgb(85, 78, 78);
 }
 
-/*
-  Hamburger menu list
-  - Make sure it's on top!
-  - Basically, when `.main-menu` is the target of the click, get its child `<ul>`
-*/
 .main-menu:target ul,
 .main-menu[aria-expanded="true"] ul {
 	position: relative;
 	z-index: 1000;
 }
 
-/*
-  Backdrop
-  - Show backdrop
-  - Basically, when `.main-menu` is the target of the click, get its sibling `.backdrop`
-  - Note: we could use `.main-menu:target:after`, but
- it wouldn't be clickable.
-*/
 .main-menu:target + .backdrop,
 .main-menu[aria-expanded="true"] + .backdrop {
 	position: absolute;
 	display: block;
 	left: 0;
 	top: 0;
-	// width: 100%;
 	height: 100%;
 	z-index: 998;
 	background: $navtext;
-	// background: rgba(0, 0, 0, 0.85);
 	cursor: default;
 }
 
-/*
-  ======================================================
-  If CSS supports `fixed`, like all good modern browsers
-  ======================================================
-*/
 @supports (position: fixed) {
-	/*
-    Allow backdrop to stay fixed and not "scroll"
-  */
 	.main-menu,
 	.main-menu:target + .backdrop,
 	.main-menu[aria-expanded="true"] + .backdrop {

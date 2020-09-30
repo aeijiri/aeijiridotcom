@@ -1,21 +1,13 @@
-//
-/*
-  ================================
-  Larger screen styling
-  ================================
-*/
-
 /*
   Horizontal menu (i.e. no hamburger)
 */
-@media (min-width: 768px) {
+@media (min-width: 767px) {
 	/* Hide hamburger menu/'button' */
 	.menu-toggle,
 	.main-menu .menu-close {
 		display: none;
 	}
 
-	/* Undo positioning of off-canvas menu */
 	.main-menu {
 		position: relative;
 		left: auto;
@@ -23,10 +15,20 @@
 		background-color: $navtext;
 		display: flex; /* allows for full height of menu */
 		flex-direction: column;
-		width: 312px;
+		max-width: 25vw;
 	}
 
 	.main-menu a {
 		border: 0 !important; /* Remove borders from off-canvas styling */
+	}
+}
+// smaller screens
+@media (max-width: 768px) {
+	main {
+		align-items: baseline;
+	}
+	.wrapper {
+		// max-width: 768px;
+		width: 100%;
 	}
 }

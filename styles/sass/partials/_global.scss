@@ -27,6 +27,9 @@ nav {
 	justify-content: center;
 }
 
+main {
+	width: 70vw;
+}
 h1 {
 	font-family: "NimbusBold";
 	font-size: 3rem;
@@ -64,8 +67,8 @@ img {
 }
 
 .wrapper {
-	max-width: 1200px;
-	width: 80%;
+	// max-width: 1200px;
+	width: 90%;
 }
 
 .flex {
@@ -75,14 +78,5 @@ img {
 
 .active {
 	font-weight: bold;
-	// transform: scale(1.1);
 	color: $highlight;
-}
-
-img {
-	opacity: 0.85;
-
-	&:hover {
-		opacity: 1;
-	}
 }

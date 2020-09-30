@@ -315,6 +315,10 @@ nav {
           justify-content: center;
 }
 
+main {
+  width: 70vw;
+}
+
 h1 {
   font-family: "NimbusBold";
   font-size: 3rem;
@@ -352,8 +356,7 @@ img {
 }
 
 .wrapper {
-  max-width: 1200px;
-  width: 80%;
+  width: 90%;
 }
 
 .flex {
@@ -367,14 +370,6 @@ img {
 .active {
   font-weight: bold;
   color: #7e00ef;
-}
-
-img {
-  opacity: 0.85;
-}
-
-img:hover {
-  opacity: 1;
 }
 
 header {
@@ -391,6 +386,7 @@ nav {
   z-index: 999;
   max-width: 480px;
   background: #e8e8e8;
+  padding: 0 15px;
 }
 
 nav ul {
@@ -424,6 +420,11 @@ nav a {
           justify-content: center;
 }
 
+.icons a:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 footer {
   padding: 20px 0;
   text-align: center;
@@ -434,14 +435,6 @@ i {
   padding: 10px 5px;
 }
 
-/*
-  ===================================================
-  Base styles for all devices sizes, but mobile first
-  ===================================================
-*/
-/*
-  Hamburger menu icon/'button' styling
-*/
 .menu-toggle {
   display: inline-block;
   padding: 0.75em 15px;
@@ -451,31 +444,19 @@ i {
 
 .main-menu a.menu-close {
   border-bottom: 0;
-  /* no border for the X 'button' */
   color: black;
 }
 
-/*
-  Close button positioning
-  - Other styles come from `.main-menu a`
-*/
 .main-menu .menu-close {
   position: absolute;
   right: 5px;
   top: 0;
+}
+
+.main-menu .menu-close span {
   color: black;
 }
 
-/*
-  =======================================
-  On small devices, allow it to toggle...
-  =======================================
-*/
-/*
-  Opening hamburger menu!
-  - Using `:target` for non-JavaScript
-  - `[aria-expanded]` will be used if/when JavaScript is added to improve interaction, though it's completely optional.
-*/
 .main-menu:target,
 .main-menu[aria-expanded="true"] {
   left: 0;
@@ -500,35 +481,18 @@ i {
   transition: left 1s ease, box-shadow 1s ease, -webkit-box-shadow 1s ease;
 }
 
-/*
-  Close menu button
-  - Make sure it's on top!
-  - Basically, when `.main-menu` is the target of the click, get its child `.menu-close` link
-*/
 .main-menu:target .menu-close,
 .main-menu[aria-expanded="true"] .menu-close {
   z-index: 1001;
   color: #554e4e;
 }
 
-/*
-  Hamburger menu list
-  - Make sure it's on top!
-  - Basically, when `.main-menu` is the target of the click, get its child `<ul>`
-*/
 .main-menu:target ul,
 .main-menu[aria-expanded="true"] ul {
   position: relative;
   z-index: 1000;
 }
 
-/*
-  Backdrop
-  - Show backdrop
-  - Basically, when `.main-menu` is the target of the click, get its sibling `.backdrop`
-  - Note: we could use `.main-menu:target:after`, but
- it wouldn't be clickable.
-*/
 .main-menu:target + .backdrop,
 .main-menu[aria-expanded="true"] + .backdrop {
   position: absolute;
@@ -541,15 +505,7 @@ i {
   cursor: default;
 }
 
-/*
-  ======================================================
-  If CSS supports `fixed`, like all good modern browsers
-  ======================================================
-*/
 @supports (position: fixed) {
-  /*
-    Allow backdrop to stay fixed and not "scroll"
-  */
   .main-menu,
   .main-menu:target + .backdrop,
   .main-menu[aria-expanded="true"] + .backdrop {
@@ -576,21 +532,28 @@ img {
   max-width: 100%;
 }
 
-/*
-  ================================
-  Larger screen styling
-  ================================
-*/
+.reel {
+  width: 100%;
+}
+
+.reel .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 /*
   Horizontal menu (i.e. no hamburger)
 */
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   /* Hide hamburger menu/'button' */
   .menu-toggle,
   .main-menu .menu-close {
     display: none;
   }
-  /* Undo positioning of off-canvas menu */
   .main-menu {
     position: relative;
     left: auto;
@@ -604,10 +567,21 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 312px;
+    max-width: 25vw;
   }
   .main-menu a {
     border: 0 !important;
     /* Remove borders from off-canvas styling */
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  .wrapper {
+    width: 100%;
   }
 }
