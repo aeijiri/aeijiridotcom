@@ -22,24 +22,25 @@
 
 .sliderContainer {
 	position: relative;
-	width: 80%;
+	width: 70%;
 	// height: 100%;
 	margin: 0 auto;
 	overflow: hidden;
+
+	img {
+		object-fit: contain;
+		position: absolute;
+		// width: 100%;
+		left: -100%;
+		top: 0;
+		// padding: 0px 10px;
+	}
 }
 
 .sliderContainer img:first-child {
 	position: relative;
 	width: 100%;
 	left: 0%;
-	top: 0;
-}
-
-img {
-	object-fit: contain;
-	position: absolute;
-	// width: 100%;
-	left: -100%;
 	top: 0;
 }
 

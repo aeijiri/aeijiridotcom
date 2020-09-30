@@ -21,20 +21,29 @@
 	.main-menu a {
 		border: 0 !important; /* Remove borders from off-canvas styling */
 	}
-	img {
-		padding: 75px;
+
+	.sliderContainer {
+		img {
+			padding: 75px;
+			padding-top: 0;
+		}
 	}
 }
 // smaller screens
 @media (max-width: 768px) {
 	main {
 		align-items: baseline;
+		width: 90vw;
 	}
 	.wrapper {
-		// max-width: 768px;
 		width: 100%;
 	}
-	img {
-		padding: 50px;
+
+	.sliderContainer {
+		width: 90%;
+
+		img {
+			padding-bottom: 40px;
+		}
 	}
 }
