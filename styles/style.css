@@ -662,6 +662,7 @@ i {
     width: 90%;
   }
   .sliderContainer img {
-    padding-bottom: 40px;
+    padding: 0 10px;
+    padding-bottom: 75px;
   }
 }
