@@ -7,10 +7,12 @@
 	font-family: "NimbusBold";
 	src: url("../styles/fonts/NimbusSansRound-Black/font.woff") format("woff");
 }
-$navtext: #e8e8e8;
+
+// THEME COLOURS
+$navtext: #e8e8e8; //nav
 $prmtext: black;
 $scdtext: white;
-$highlight: #7e00ef;
+$highlight: #7e00ef; // nav accent
 
 body {
 	font-family: "NimbusSemi";
